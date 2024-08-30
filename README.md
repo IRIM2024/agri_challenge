@@ -44,7 +44,7 @@ A repository for IRIM-2024 Agri Challenge. Used for build, test, and deployment 
 ## Installation Steps
 
 It is assumed that you already have a computer with ROS installed and the required packages for the TIAGo.
-If not, follow the tutorial on the official ROS website (Noetic) <a href="http://wiki.ros.org/noetic/Installation">here</a>. Subsequently, install the tiago_tutorials package <a href="https://github.com/pal-robotics/tiago_tutorials?tab=readme-ov-file">here</a>.
+If not, follow the tutorial on the official ROS website (Noetic) <a href="http://wiki.ros.org/noetic/Installation">here</a>. Subsequently, install the tiago_tutorials package <a href="http://wiki.ros.org/Robots/TIAGo/Tutorials/Installation/InstallUbuntuAndROS">here</a>.
 
 
 After this, everything should autoinstall with the command:
