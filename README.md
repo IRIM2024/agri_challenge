@@ -98,8 +98,7 @@ The robot is endowed with a camera mounted inside the head, which can be exploit
 To see the data, check the topics
 
 ```
-/left_camera/...
-/right_camera/...
+/xtion/...
 ```
 
 ## Issues:
