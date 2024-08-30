@@ -1,0 +1,15 @@
+material Blossom2Texture
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        // Relative to the location of the material script
+        texture ../textures/AG15blo2.png
+        scale 1.0 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+   <gui>
+      <camera name="user_default">
+            <pose>16. 2. 13. 0 0.77 3.12</pose>
+      </camera>
+    </gui>      
+    <include>
+      <uri>model://sun_2</uri>
+    </include>
+    <scene>
+      <ambient>1 1 1 1</ambient>
+      <background>0.8 0.8 0.8 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <light name='sun' type='directional'>
+       <cast_shadows>1</cast_shadows>
+       <pose>0 0 10 0 -0 0</pose>
+       <diffuse>0.8 0.8 0.8 1</diffuse>
+       <specular>0.8 0.8 0.8 1</specular>
+       <attenuation>
+          <range>1000</range>
+          <constant>0.9</constant>
+          <linear>0.01</linear>
+          <quadratic>0.001</quadratic>
+       </attenuation>
+       <direction>-0.5 0.1 -0.9</direction>
+       <spot>
+          <inner_angle>0</inner_angle>
+          <outer_angle>0</outer_angle>
+          <falloff>0</falloff>
+       </spot>
+    </light>    
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://tomato_plant1</uri>
+      <name>tomato_plant1</name>
+      <pose>0.0 0.0 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://tomato_plant2</uri>
+      <name>tomato_plant2</name>
+      <pose>0.0 1.0 0 0 0 0</pose>
+    </include>
+  </world>
+</sdf>

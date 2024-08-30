@@ -1,0 +1,1636 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+<model name="tomato_plant2">
+      <pose>0 0 0 0 0 0</pose>
+      <static>false</static>
+      <link name="tomato_tree_link">
+        <kinematic> true </kinematic>
+        <collision name="collision">
+          <pose>0 0 0.7 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>.1 .1 1.4</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="branch">
+          <geometry>
+            <mesh>
+              <uri>file://tomato_tree2/meshes/tomato.dae</uri>
+              <scale>1.4 1.4 1.4</scale>
+              <submesh>
+                <name>Branch1</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_tree2/materials/scripts/</uri>
+              <uri>model://tomato_tree2/materials/textures/</uri>
+              <name>BranchTexture</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="leaf1">
+          <geometry>
+            <mesh>
+              <uri>file://tomato_tree2/meshes/tomato.dae</uri>
+              <scale>1.4 1.4 1.4</scale>
+              <submesh>
+                <name>Leaf1</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_tree2/materials/scripts/</uri>
+              <uri>model://tomato_tree2/materials/textures/</uri>
+              <name>Leaf1Texture</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="leaf2">
+          <geometry>
+            <mesh>
+              <uri>file://tomato_tree2/meshes/tomato.dae</uri>
+              <scale>1.4 1.4 1.4</scale>
+              <submesh>
+                <name>Leaf2</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_tree2/materials/scripts/</uri>
+              <uri>model://tomato_tree2/materials/textures/</uri>
+              <name>Leaf2Texture</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="blossom1">
+          <geometry>
+            <mesh>
+              <uri>file://tomato_tree2/meshes/tomato.dae</uri>
+              <scale>1.4 1.4 1.4</scale>
+              <submesh>
+                <name>Blossom1</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_tree2/materials/scripts/</uri>
+              <uri>model://tomato_tree2/materials/textures/</uri>
+              <name>Blossom1Texture</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="blossom2">
+          <geometry>
+            <mesh>
+              <uri>file://tomato_tree2/meshes/tomato.dae</uri>
+              <scale>1.4 1.4 1.4</scale>
+              <submesh>
+                <name>Blossom2</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_tree2/materials/scripts/</uri>
+              <uri>model://tomato_tree2/materials/textures/</uri>
+              <name>Blossom2Texture</name>
+            </script>
+          </material>
+        </visual>
+        <visual name="blossom3">
+          <geometry>
+            <mesh>
+              <uri>file://tomato_tree2/meshes/tomato.dae</uri>
+              <scale>1.4 1.4 1.4</scale>
+              <submesh>
+                <name>Blossom3</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_tree2/materials/scripts/</uri>
+              <uri>model://tomato_tree2/materials/textures/</uri>
+              <name>Blossom3Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>  
+      <link name="tomato1_link">
+        <pose>-0.0066316604614257806 -0.19216344356536863 0.6168960587978363 -0.05 0.1 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit1/materials/scripts/</uri>
+              <uri>model://tomato_fruit1/materials/textures/</uri>
+              <name>Fruit1Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato1" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato1_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin1" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato1</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato1_link</link_name>
+      </plugin>
+      <link name="tomato2_link">
+        <pose>0.029487323760986325 -0.21878004074096677 0.694796359539032 -0.25 0.1 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit3/materials/scripts/</uri>
+              <uri>model://tomato_fruit3/materials/textures/</uri>
+              <name>Fruit3Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato2" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato2_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin2" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato2</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato2_link</link_name>
+      </plugin>
+      <link name="tomato3_link">
+        <pose>0.019719409942626952 -0.13977839946746826 0.7212287902832031 0 -0.25 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit3/materials/scripts/</uri>
+              <uri>model://tomato_fruit3/materials/textures/</uri>
+              <name>Fruit3Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato3" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato3_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin3" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato3</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato3_link</link_name>
+      </plugin>
+      <link name="tomato4_link">
+        <pose>-0.02073845863342285 -0.17099740505218505 0.7717585062980652 -0.2 0.25 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit2/materials/scripts/</uri>
+              <uri>model://tomato_fruit2/materials/textures/</uri>
+              <name>Fruit2Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato4" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato4_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin4" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato4</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato4_link</link_name>
+      </plugin>
+      <link name="tomato5_link">
+        <pose>0.06358890533447266 -0.13759399890899658 0.7987638592720031 0 -0.25 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit1/materials/scripts/</uri>
+              <uri>model://tomato_fruit1/materials/textures/</uri>
+              <name>Fruit1Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato5" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato5_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin5" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato5</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato5_link</link_name>
+      </plugin>
+      <link name="tomato6_link">
+        <pose>0.013982629776000975 -0.07330748081207275 0.8062263345718383 0 0.15 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit3/materials/scripts/</uri>
+              <uri>model://tomato_fruit3/materials/textures/</uri>
+              <name>Fruit3Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato6" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato6_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin6" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato6</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato6_link</link_name>
+      </plugin>
+      <link name="tomato7_link">
+        <pose>-0.040427827835083 -0.06760017871856688 0.8667127609252929 0 0.35 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit2/materials/scripts/</uri>
+              <uri>model://tomato_fruit2/materials/textures/</uri>
+              <name>Fruit2Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato7" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato7_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin7" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato7</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato7_link</link_name>
+      </plugin>
+      <link name="tomato8_link">
+        <pose>0.15754432678222655 0.14312694072723386 0.7795005249977112 0 -0.25 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit2/materials/scripts/</uri>
+              <uri>model://tomato_fruit2/materials/textures/</uri>
+              <name>Fruit2Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato8" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato8_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin8" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato8</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato8_link</link_name>
+      </plugin>
+      <link name="tomato9_link">
+        <pose>0.17055764198303222 0.08876463174819946 0.8600858650207519 0 -0.15 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit2/materials/scripts/</uri>
+              <uri>model://tomato_fruit2/materials/textures/</uri>
+              <name>Fruit2Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato9" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato9_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin9" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato9</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato9_link</link_name>
+      </plugin>
+      <link name="tomato10_link">
+        <pose>0.15251517295837402 0.15675978422164915 0.8993290781974792 0.25 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit1/materials/scripts/</uri>
+              <uri>model://tomato_fruit1/materials/textures/</uri>
+              <name>Fruit1Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato10" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato10_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin10" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato10</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato10_link</link_name>
+      </plugin>
+      <link name="tomato11_link">
+        <pose>0.10660724639892577 0.08952797889709472 0.9110912179946898 0 0.15 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit2/materials/scripts/</uri>
+              <uri>model://tomato_fruit2/materials/textures/</uri>
+              <name>Fruit2Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato11" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato11_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin11" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato11</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato11_link</link_name>
+      </plugin>
+      <link name="tomato12_link">
+        <pose>0.07804517745971679 0.03802999258041381 0.9582298822402954 0 -0.15 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit1/materials/scripts/</uri>
+              <uri>model://tomato_fruit1/materials/textures/</uri>
+              <name>Fruit1Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato12" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato12_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin12" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato12</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato12_link</link_name>
+      </plugin>
+      <link name="tomato13_link">
+        <pose>0.16402678489685057 0.07082763910293578 0.957705602645874 0 -0.3 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit2/materials/scripts/</uri>
+              <uri>model://tomato_fruit2/materials/textures/</uri>
+              <name>Fruit2Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato13" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato13_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin13" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato13</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato13_link</link_name>
+      </plugin>
+      <link name="tomato14_link">
+        <pose>0.09777460098266601 0.11201674938201904 0.9789517121315002 0.15 -0.10 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit3/materials/scripts/</uri>
+              <uri>model://tomato_fruit3/materials/textures/</uri>
+              <name>Fruit3Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato14" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato14_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin14" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato14</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato14_link</link_name>
+      </plugin>
+      <link name="tomato15_link">
+        <pose>0.1048779010772705 -0.013287770748138427 1.020360151290893 0 -0.45 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit1/materials/scripts/</uri>
+              <uri>model://tomato_fruit1/materials/textures/</uri>
+              <name>Fruit1Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato15" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato15_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin15" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato15</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato15_link</link_name>
+      </plugin>
+      <link name="tomato16_link">
+        <pose>-0.17465252876281737 0.051171064376831055 0.9690939292907714 0.15 -0.2 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit3/materials/scripts/</uri>
+              <uri>model://tomato_fruit3/materials/textures/</uri>
+              <name>Fruit3Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato16" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato16_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin16" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato16</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato16_link</link_name>
+      </plugin>
+      <link name="tomato17_link">
+        <pose>-0.2013893938064575 0.012228585720062256 1.0190112199783324 -0.25 0.399 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit1/materials/scripts/</uri>
+              <uri>model://tomato_fruit1/materials/textures/</uri>
+              <name>Fruit1Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato17" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato17_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin17" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato17</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato17_link</link_name>
+      </plugin>
+      <link name="tomato18_link">
+        <pose>-0.12066481113433837 0.020912611484527586 1.0429066300392151 0 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit1/materials/scripts/</uri>
+              <uri>model://tomato_fruit1/materials/textures/</uri>
+              <name>Fruit1Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato18" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato18_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin18" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato18</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato18_link</link_name>
+      </plugin>
+      <link name="tomato19_link">
+        <pose>-0.14621295928955078 0.06560230255126953 1.0953559494018554 0.2 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit3/materials/scripts/</uri>
+              <uri>model://tomato_fruit3/materials/textures/</uri>
+              <name>Fruit3Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato19" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato19_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin19" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato19</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato19_link</link_name>
+      </plugin>
+      <link name="tomato20_link">
+        <pose>-0.12900962829589843 -0.011287975311279296 1.11951771736145 -0.2 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit1/materials/scripts/</uri>
+              <uri>model://tomato_fruit1/materials/textures/</uri>
+              <name>Fruit1Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato20" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato20_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin20" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato20</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato20_link</link_name>
+      </plugin>
+      <link name="tomato21_link">
+        <pose>-0.06419589519500732 0.03872510194778442 1.1174963092803953 0.1 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit3/materials/scripts/</uri>
+              <uri>model://tomato_fruit3/materials/textures/</uri>
+              <name>Fruit3Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato21" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato21_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin21" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato21</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato21_link</link_name>
+      </plugin>
+      <link name="tomato22_link">
+        <pose>-0.047806501388549805 0.07035355806350708 1.183191738128662 0.6 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit3/materials/scripts/</uri>
+              <uri>model://tomato_fruit3/materials/textures/</uri>
+              <name>Fruit3Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato22" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato22_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin22" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato22</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato22_link</link_name>
+      </plugin>
+      <link name="tomato23_link">
+        <pose>0.068921141624450684 -0.14626152515411375 1.203853693008423 -0.19 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit3/materials/scripts/</uri>
+              <uri>model://tomato_fruit3/materials/textures/</uri>
+              <name>Fruit3Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato23" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato23_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin23" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato23</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato23_link</link_name>
+      </plugin>
+      <link name="tomato24_link">
+        <pose>0.11766390800476073 -0.12070653438568114 1.2839510469436645 0 -0.4499 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit1/materials/scripts/</uri>
+              <uri>model://tomato_fruit1/materials/textures/</uri>
+              <name>Fruit1Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato24" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato24_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin24" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato24</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato24_link</link_name>
+      </plugin>
+      <link name="tomato25_link">
+        <pose>0.0400370300292965 -0.12899496555328368 1.2502801718711851 -0.35 0.05 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit2/materials/scripts/</uri>
+              <uri>model://tomato_fruit2/materials/textures/</uri>
+              <name>Fruit2Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato25" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato25_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin25" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato25</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato25_link</link_name>
+      </plugin>
+      <link name="tomato26_link">
+        <pose>0.06398719787597656 -0.04282557964324951 1.3023123526573181 0.2 -0.2 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit2/materials/scripts/</uri>
+              <uri>model://tomato_fruit2/materials/textures/</uri>
+              <name>Fruit2Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato26" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato26_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin26" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato26</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato26_link</link_name>
+      </plugin>
+      <link name="tomato27_link">
+        <pose>0.02967591285705566 -0.12302467823028564 1.3091226158142089 -0.55 0.05 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit1/materials/scripts/</uri>
+              <uri>model://tomato_fruit1/materials/textures/</uri>
+              <name>Fruit1Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato27" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato27_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin27" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato27</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato27_link</link_name>
+      </plugin>
+      <link name="tomato28_link">
+        <pose>-0.03134323596954345 -0.0444855946350098 1.3251410603523253 -0.1499 0.65 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit1/materials/scripts/</uri>
+              <uri>model://tomato_fruit1/materials/textures/</uri>
+              <name>Fruit1Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato28" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato28_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin28" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato28</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato28_link</link_name>
+      </plugin>
+      <link name="tomato29_link">
+        <pose>-0.0132109915161132811 0.1182326579093933 1.50003728866577 0.6 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit2/materials/scripts/</uri>
+              <uri>model://tomato_fruit2/materials/textures/</uri>
+              <name>Fruit2Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato29" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato29_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin29" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato29</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato29_link</link_name>
+      </plugin>
+      <link name="tomato30_link">
+        <pose>-0.08709344863891601 0.1120099902153015 1.4498862075805664 0 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit1/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit1/materials/scripts/</uri>
+              <uri>model://tomato_fruit1/materials/textures/</uri>
+              <name>Fruit1Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato30" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato30_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin30" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato30</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato30_link</link_name>
+      </plugin>
+      <link name="tomato31_link">
+        <pose>-0.18481952667236327 0.14005168676376342 1.4640326051712035 0.15 0.40 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit3/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit3/materials/scripts/</uri>
+              <uri>model://tomato_fruit3/materials/textures/</uri>
+              <name>Fruit3Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato31" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato31_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin31" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato31</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato31_link</link_name>
+      </plugin>
+      <link name="tomato32_link">
+        <pose>-0.1708510398864746 0.19228736162185667 1.4225858459472656 0.39 0 0</pose>
+        <inertial>
+          <mass>0.1</mass>
+          <inertia>
+            <ixx>0.00009</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00009</iyy>
+            <iyz>0</iyz>
+            <izz>0.00009</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name="fruit">
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file://tomato_fruit2/meshes/tomato.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1.0 1.0 1.0</diffuse>
+            <script>
+              <uri>model://tomato_fruit2/materials/scripts/</uri>
+              <uri>model://tomato_fruit2/materials/textures/</uri>
+              <name>Fruit2Texture</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <joint name="joint_tomato32" type="fixed">
+        <parent>tomato_tree_link</parent>
+        <child>tomato32_link</child>
+      </joint>
+      <plugin name="detachable_joint_plugin32" filename="libDetachableJointPlugin.so">
+        <joint_name>joint_tomato32</joint_name>
+        <force_threshold>30.0</force_threshold>
+        <link_name>tomato32_link</link_name>
+      </plugin>
+    </model>
+</sdf>
