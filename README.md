@@ -110,9 +110,10 @@ In order to run the node write the following instruction in the second console
 rosrun look_to_point look_to_point
 ```
 the node will subscribe to the following topics:
-<<<<<<< HEAD
 ```
-/xtion/rgb/camera_info * /xtion/rgb/image_raw
+/xtion/rgb/camera_info
+
+/xtion/rgb/image_raw
 ```
   
 ## Issues:
