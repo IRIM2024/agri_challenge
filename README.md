@@ -120,12 +120,3 @@ the node will subscribe to the following topics:
 If you encounter any issues, please contact us at our email address:
 * andrea.pupa@unimore.it
 * c.lauretti@unicampus.it
-=======
-
-* /xtion/rgb/camera_info * /xtion/rgb/image_raw
-  
-## Issues:
-
-If you encounter any issues, please contact us at our email address: andrea.pupa@unimore.it
-                                                                     c.lauretti@unicampus.it
->>>>>>> 5e3de75bcdbbe9cab6c035d91e82a768941c7412
