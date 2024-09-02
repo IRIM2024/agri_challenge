@@ -35,9 +35,9 @@ A repository for IRIM-2024 Agri Challenge. Used for build, test, and deployment 
 
 <img src="images/irimlogo.png" width="200"/>  <img src="https://www.ros.org/imgs/logo-white.png" width="200"/>
 
-- This repository provides framework and the URDF for the simulation of the challenge 
+- This repository provides a framework and the URDF for the simulation of the challenge 
 - You can find information about the challenge on the <a href="https://i-rim.it/en/challenges-2/">rule page</a>.
-- The supported robot for this simulation is the TIAGo Mobile Manipulator developed by PAL Robotics.
+- The supported robot for this simulation is the TIAGo Mobile Manipulator, which was developed by PAL Robotics.
 
 ---
 
@@ -100,7 +100,32 @@ To see the data, check the topics
 ```
 /xtion/...
 ```
+### Head control
 
+An example of C++ node using a head action client is given in tiago_tutorials/look_to_point/src/look_to_point.cpp.
+
+In order to run the node write the following instruction in the second console
+
+```
+rosrun look_to_point look_to_point
+```
+the node will subscribe to the following topics:
+<<<<<<< HEAD
+```
+/xtion/rgb/camera_info * /xtion/rgb/image_raw
+```
+  
 ## Issues:
 
-If you encounter any issues, please contact me at my email address: andrea.pupa@unimore.it
+If you encounter any issues, please contact us at our email address:
+* andrea.pupa@unimore.it
+* c.lauretti@unicampus.it
+=======
+
+* /xtion/rgb/camera_info * /xtion/rgb/image_raw
+  
+## Issues:
+
+If you encounter any issues, please contact us at our email address: andrea.pupa@unimore.it
+                                                                     c.lauretti@unicampus.it
+>>>>>>> 5e3de75bcdbbe9cab6c035d91e82a768941c7412
